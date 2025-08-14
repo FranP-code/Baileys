@@ -5,6 +5,7 @@ import { DEFAULT_CACHE_TTLS, PROCESSABLE_HISTORY_TYPES } from '../Defaults'
 import {
 	ALL_WA_PATCH_NAMES,
 	BotListInfo,
+	CacheStore,
 	ChatModification,
 	ChatMutation,
 	LTHashState,
@@ -79,7 +80,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 		})
 
 	if (!config.placeholderResendCache) {
-		config.placeholderResendCache = placeholderResendCache
+		config.placeholderResendCache = placeholderResendCache as CacheStore
 	}
 
 	/** helper function to fetch the given app state sync key */
@@ -974,7 +975,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			})(),
 			processMessage(msg, {
 				shouldProcessHistoryMsg,
-				placeholderResendCache,
+				placeholderResendCache: placeholderResendCache as CacheStore,
 				ev,
 				creds: authState.creds,
 				keyStore: authState.keys,

@@ -20,7 +20,7 @@ export const downloadHistory = async (msg: proto.Message.IHistorySyncNotificatio
 	let buffer = Buffer.concat(bufferArray)
 
 	// decompress buffer
-	buffer = await inflatePromise(buffer)
+	buffer = Buffer.from(await inflatePromise(buffer))
 
 	const syncData = proto.HistorySync.decode(buffer)
 	return syncData
