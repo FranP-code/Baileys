@@ -278,5 +278,5 @@ export const makeBusinessSocket = (config: SocketConfig) => {
 		productCreate,
 		productDelete,
 		productUpdate
-	}
+	} as const
 }

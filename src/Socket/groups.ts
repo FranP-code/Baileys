@@ -302,7 +302,7 @@ export const makeGroupsSocket = (config: SocketConfig) => {
 			])
 		},
 		groupFetchAllParticipating
-	}
+	} as const
 }
 
 export const extractGroupMetadata = (result: BinaryNode) => {
