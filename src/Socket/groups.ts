@@ -20,7 +20,7 @@ import {
 } from '../WABinary'
 import { makeChatsSocket } from './chats'
 
-export const makeGroupsSocket = (config: SocketConfig) => {
+export const makeGroupsSocket = (config: SocketConfig): any => {
 	const sock = makeChatsSocket(config)
 	const { authState, ev, query, upsertMessage } = sock
 
@@ -302,7 +302,7 @@ export const makeGroupsSocket = (config: SocketConfig) => {
 			])
 		},
 		groupFetchAllParticipating
-	} as const
+	}
 }
 
 export const extractGroupMetadata = (result: BinaryNode) => {

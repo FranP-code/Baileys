@@ -40,7 +40,7 @@ const parseNewsletterMetadata = (result: unknown): NewsletterMetadata | null => 
 	return null
 }
 
-export const makeNewsletterSocket = (sock: GroupsSocket) => {
+export const makeNewsletterSocket = (sock: GroupsSocket): any => {
 	const { query, generateMessageTag } = sock
 
 	const executeWMexQuery = <T>(variables: Record<string, unknown>, queryId: string, dataPath: string): Promise<T> => {
@@ -221,7 +221,7 @@ export const makeNewsletterSocket = (sock: GroupsSocket) => {
 		newsletterDelete: async (jid: string) => {
 			await executeWMexQuery({ newsletter_id: jid }, QueryIds.DELETE, XWAPaths.xwa2_newsletter_delete_v2)
 		}
-	} as const
+	}
 }
 
 export type NewsletterSocket = ReturnType<typeof makeNewsletterSocket>
