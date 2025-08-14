@@ -224,4 +224,4 @@ export const makeNewsletterSocket = (sock: GroupsSocket): any => {
 	}
 }
 
-export type NewsletterSocket = ReturnType<typeof makeNewsletterSocket>
+export type NewsletterSocket = any

@@ -8,6 +8,6 @@ export * from './WABinary'
 export * from './WAM'
 export * from './WAUSync'
 
-export type WASocket = ReturnType<typeof makeWASocket>
+export type WASocket = any
 export { makeWASocket }
 export default makeWASocket
