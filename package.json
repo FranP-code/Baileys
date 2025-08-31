@@ -32,7 +32,8 @@
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "yarn format && yarn lint --fix",
     "preinstall": "node ./engine-requirements.js",
-    "postinstall": "npx tsc",
+    "prepack": "npx tsc",
+    "prepare": "npx tsc",
     "release": "release-it",
     "test": "jest"
   },
